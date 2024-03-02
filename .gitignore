@@ -1,3 +1,4 @@
 .env
-**/__pychache__
+__pychache__/
+tools/__pychache__/
 output/

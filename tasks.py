@@ -8,9 +8,9 @@ class YoutubeAutomationTasks():
     def manage_youtube_video_creation(self, agent, video_topic, video_details):
         return Task(
             description=dedent(f"""Oversee the YouTube prepration process including market research, title ideation, 
-                and description creation reqired to make a YouTube video. The ultimate goal is for you to generate 
+                description creation, and email creation reqired to make a YouTube video. The ultimate goal is for you to generate 
                 a report including a research table, potential high click-through-rate titles, 
-                and a YouTube video description.
+                a YouTube video description, and an emails newsletter update about the new video.
                                
                 The video topic is: {video_topic}
                 The video details are: {video_details}
@@ -63,16 +63,47 @@ class YoutubeAutomationTasks():
             - https://www.crewai.io/
             - https://twitter.com/joaomdmoura/status/1756428892045496608
             - https://serper.dev/
-                """),
+            
+            # Email Announcement:
+            
+            Subject: New CrewAI Tutorial: Learn How To Use the Latest CrewAI Features
+
+            Hey [FIRST NAME GOES HERE]!
+
+            Exciting update: CrewAI's new version is here, making it quicker and more dependable!
+
+            You loved our first CrewAI tutorial, so I just published a new one for you.
+
+            In this tutorial, you'll get up to speed with CrewAI's new features. We'll then apply these updates by building an AI Newsletter, demonstrating how to use what you've learned in a real project.
+
+            [VIDEO PREVIEW HERE]
+
+            Here's what's in store:
+
+            Learn to manage a team with CrewAI's new Hierarchical workflow.
+            Discover how asynchronous tasks can boost your efficiency.
+            Find out how the Expected Output feature ensures accuracy and reliability.
+            Plus, lots more insights!
+            Dive into the tutorial to explore CrewAI's enhanced functions:
+
+            [VIDEO PREVIEW HERE]
+
+            Questions or want to share how you're doing? Email me or comment on YouTube.
+
+            Happy coding!
+
+            Cheers, 
+            Brandon Hancock
+            """),
             agent=agent,
             output_file="output/YouTube_Video_Creation_Report"
         )
 
-    def manage_youtube_video_research(self, agent, context, video_topic, video_details):
+    def manage_youtube_video_research(self, agent, video_topic, video_details):
         return Task(
             description=dedent(f"""For a given video topic and description, search youtube videos to find 
                 15 high-performing YouTube videos on the same topic. Once you have found the videos, 
-                delegate out research tasks to other agents to help you finish populate the missing fields in the 
+                research the YouTube video details to finish populate the missing fields in the 
                 research CSV. When delegating tasks to other agents, make sure you include the 
                 URL of the video that you need them to research.
                             
@@ -96,30 +127,12 @@ class YoutubeAutomationTasks():
                     and YouTube URLs that actually link to the YouTube Video.
                 """),
             agent=agent,
-            context=context,
             expected_output=dedent(f"""
                 Video Title; View Count; Days Since Published; Channel Subscriber Count; Video URL
                 How to Make a YouTube Video; 100,000; 30; 1,000; https://www.youtube.com/watch?v=1234;
                 How to Get Your First 1000 Subscribers; 100,000; 30; 1,000; https://www.youtube.com/watch?v=1234;
                        ...              
                 """)
-        )
-
-    def research_youtube_video(self, agent):
-        return Task(
-            description=dedent(f"""Based on a given YouTube Video URL research and return the following 
-                information in a bulleted list: title of the video, view count, days since published, 
-                channel subscriber count, and video url.
-                """),
-            agent=agent,
-            expected_output=dedent(f"""
-                - Title: "How to Make a YouTube Video"
-                - View Count: 100,000
-                - Days Since Published: 30
-                - Channel Subscriber Count: 1,000
-                - Video URL: https://www.youtube.com/watch?v=1234
-                """),
-            async_execution=True
         )
 
     def create_youtube_video_title(self, agent, video_topic, video_details):
@@ -170,4 +183,90 @@ class YoutubeAutomationTasks():
                 Timestamps: 
                 [LEAVE BLANK]
             """),
+        )
+
+    def create_email_announcement_for_new_video(self, agent, video_topic, video_details):
+        return Task(
+            description=dedent(f"""Create an email to send to an email list to promote the new YouTube video.
+                               
+                Video Topic: {video_topic}
+                Video Details: {video_details}
+
+                Here are a few previous email announcements that you can use as inspiration. 
+                
+                Important Notes:
+                - Make sure to copy my style, tone, and voice when writing the email.
+                -  Before submitting your final work, you MUST have a human review your tenative final email.
+
+                Email 1:
+                ----------------
+                Subject: New CrewAI Tutorial: Learn How To Use the Latest CrewAI Features
+
+                Hey [FIRST NAME GOES HERE]!
+
+                Exciting update: CrewAI's new version is here, making it quicker and more dependable!
+
+                You loved our first CrewAI tutorial, so I just published a new one for you.
+
+                In this tutorial, you'll get up to speed with CrewAI's new features. We'll then apply these updates by building an AI Newsletter, demonstrating how to use what you've learned in a real project.
+
+                video preview​
+                Here's what's in store:
+
+                Learn to manage a team with CrewAI's new Hierarchical workflow.
+                Discover how asynchronous tasks can boost your efficiency.
+                Find out how the Expected Output feature ensures accuracy and reliability.
+                Plus, lots more insights!
+                Dive into the tutorial to explore CrewAI's enhanced functions:
+
+                video preview​
+                Questions or want to share how you're doing? Email me or comment on YouTube.
+
+                Happy coding!
+
+                Cheers, 
+                Brandon Hancock
+                ----------------
+
+
+                Email 2:
+                ----------------
+                Subject: New CrewAI + Ollama Tutorial: Learn How To Run CrewAI for Free
+
+                Hey [FIRST NAME GOES HERE]!
+
+                You asked, and I delivered! 🚀
+
+                After posting my latest CrewAI tutorial, the 2 biggest questions flooding my inbox have been:
+
+                How do I connect CrewAI with LLMs like Llama 2 and Mistral?
+                How can I run CrewAI for free?
+                Since it would be wrong to leave you hanging, I just published a new step-by-step YouTube tutorial for you to answer these questions!
+
+                [VIDEO PREVIEW HERE]
+
+                This tutorial shows you how to connect CrewAI with LLMs running on your own machine, which let's you run CrewAI completely for free!
+
+                🎥 New Tutorial Alert: Connect CrewAI with Llama 2 & Mistral for Free!
+
+                In this step-by-step guide for beginners, I'm pumped to walk you through the process of connecting CrewAI to locally running LLMs on your machine. Whether you're working with Llama 2, Mistral, or another LLM, I've got you covered. This tutorial is your golden ticket to running your crew at no cost!
+
+                Here's a sneak peek of what you'll learn:
+
+                Understanding CrewAI, Ollama, Llama 2, and Mistral: Dive into the basics of these powerful tools and their potential to revolutionize your projects.
+                Step-by-Step Integration: Follow my detailed instructions to seamlessly connect CrewAI with Llama 2 or Mistral.
+                Run Your Crew for Free: Yes, you read that right! I'll show you how to leverage these technologies without dipping into your wallet.
+                I can't wait for you to check out the tutorial and start experimenting with CrewAI, Ollama, Llama 2, and Mistral. Your feedback and questions are what fuel this community, so don't hesitate to drop a comment on the video or shoot me an email with your thoughts and experiences.
+
+                [VIDEO PREVIEW HERE]
+
+                Once again, you can check out the latest video here:
+
+                Happy coding, and here's to many more innovative projects ahead!
+
+                Cheers,
+                Brandon Hancock
+                ----------------
+                """),
+            agent=agent,
         )
