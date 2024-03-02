@@ -1,6 +1,6 @@
+from functools import partial
 from crewai import Task
 from textwrap import dedent
-from tools.youtube_tools import YoutubeTools
 
 
 class YoutubeAutomationTasks():
@@ -14,9 +14,6 @@ class YoutubeAutomationTasks():
                                
                 The video topic is: {video_topic}
                 The video details are: {video_details}
-                """),
-            agent=agent,
-            expected_output=dedent(f"""
 
             Example Output:
                                    
@@ -33,15 +30,23 @@ class YoutubeAutomationTasks():
                 - Days Since Published: 30
                 - Channel Subscriber Count: 1,000
                 - Video URL: https://www.youtube.com/watch?v=1234
-            ...
+
+            [THE REST OF THE YOUTUBE COMPETITION RESEARCH GOES HERE]
                                    
-            Potential High CTRO Titles:
+            - Video 15:
+                - Title: "How to Make a YouTube Video"
+                - View Count: 100,000
+                - Days Since Published: 30
+                - Channel Subscriber Count: 1,000
+                - Video URL: https://www.youtube.com/watch?v=1234                
+                                   
+            # Potential High CTRO Titles:
             - How to Make a YouTube Video
             - How to Make a YouTube Video in 2021
             - How to Make a YouTube Video for Beginners
-            ...
+            [THE REST OF THE POTENTIAL HIGH CTRO TITLES GO HERE]
                                    
-            YouTube Video Description:
+            # YouTube Video Description:
             🤖 Download the CrewAI Source Code Here:
             https://brandonhancock.io/crewai-updated-tutorial-hierarchical 
 
@@ -58,15 +63,16 @@ class YoutubeAutomationTasks():
             - https://www.crewai.io/
             - https://twitter.com/joaomdmoura/status/1756428892045496608
             - https://serper.dev/
-                                   
-            """),
+                """),
+            agent=agent,
+            output_file="output/YouTube_Video_Creation_Report"
         )
 
     def manage_youtube_video_research(self, agent, context, video_topic, video_details):
         return Task(
-            description=dedent(f"""For a given video topic and description, find 15 high-performing
-                YouTube videos on the same topic. Once you have found the videos, delegate out research
-                tasks to other agents to help you finish populate the missing fields in the 
+            description=dedent(f"""For a given video topic and description, search youtube videos to find 
+                15 high-performing YouTube videos on the same topic. Once you have found the videos, 
+                delegate out research tasks to other agents to help you finish populate the missing fields in the 
                 research CSV. When delegating tasks to other agents, make sure you include the 
                 URL of the video that you need them to research.
                             
@@ -86,6 +92,8 @@ class YoutubeAutomationTasks():
                 Important Notes: 
                 - Make sure the CSV uses ; as the delimiter
                 - Make sure the final Research CSV Outline doesn't contain duplicate videos
+                - It is SUPER IMPORTANT that you only populate the research CSV with real YouTube videos 
+                    and YouTube URLs that actually link to the YouTube Video.
                 """),
             agent=agent,
             context=context,
@@ -94,8 +102,7 @@ class YoutubeAutomationTasks():
                 How to Make a YouTube Video; 100,000; 30; 1,000; https://www.youtube.com/watch?v=1234;
                 How to Get Your First 1000 Subscribers; 100,000; 30; 1,000; https://www.youtube.com/watch?v=1234;
                        ...              
-                """),
-            tools=[YoutubeTools.search_youtube_videos]
+                """)
         )
 
     def research_youtube_video(self, agent):
@@ -112,7 +119,6 @@ class YoutubeAutomationTasks():
                 - Channel Subscriber Count: 1,000
                 - Video URL: https://www.youtube.com/watch?v=1234
                 """),
-            tools=[YoutubeTools.get_video_details],
             async_execution=True
         )
 

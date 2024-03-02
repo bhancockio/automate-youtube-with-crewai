@@ -3,6 +3,8 @@ from crewai import Crew, Process
 from agents import YoutubeAutomationAgents
 from tasks import YoutubeAutomationTasks
 from langchain_openai import ChatOpenAI
+from tools.youtube_video_details_tool import YoutubeVideoDetailsTool
+from tools.youtube_video_search_tool import YoutubeVideoSearchTool
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -15,10 +17,12 @@ OpenAIGPT4 = ChatOpenAI(
 agents = YoutubeAutomationAgents()
 tasks = YoutubeAutomationTasks()
 
+youtube_video_search_tool = YoutubeVideoSearchTool()
+youtube_video_details_tool = YoutubeVideoDetailsTool()
 
-youtube_manager = agents.youtube_manager()
-research_manager = agents.research_manager()
-youtube_researcher = agents.youtube_researcher()
+youtube_manager = agents.youtube_manager(youtube_video_search_tool)
+research_manager = agents.research_manager(youtube_video_search_tool)
+youtube_researcher = agents.youtube_researcher(youtube_video_details_tool)
 title_creator = agents.title_creator()
 description_creator = agents.description_creator()
 

@@ -1,9 +1,8 @@
 from crewai import Agent
-from textwrap import dedent
 
 
 class YoutubeAutomationAgents():
-    def youtube_manager(self):
+    def youtube_manager(self, youtube_video_search_tool):
         return Agent(
             role="YouTube Manager",
             goal="""Oversee the YouTube prepration process including market research, title ideation, 
@@ -17,10 +16,11 @@ class YoutubeAutomationAgents():
                 3. Write a description for the YouTube video.
                 """,
             allow_delegation=True,
-            verbose=True
+            verbose=True,
+            tools=[youtube_video_search_tool]
         )
 
-    def research_manager(self):
+    def research_manager(self, youtube_video_search_tool):
         return Agent(
             role="YouTube Research Manager",
             goal="""For a given topic and description for a new YouTube video. Delegate out research tasks to other agents
@@ -30,10 +30,11 @@ class YoutubeAutomationAgents():
             backstory="""As a methodical and detailed research managar, you are responsible for overseeing researchers who 
                 actively search YouTube to find high-performing YouTube videos on the same topic.""",
             verbose=True,
-            allow_delegation=True
+            allow_delegation=True,
+            tools=[youtube_video_search_tool]
         )
 
-    def youtube_researcher(self):
+    def youtube_researcher(self, youtube_video_details_tool):
         return Agent(
             role="YouTube Researcher",
             goal="""Research a given topic and find high-performing YouTube videos on the same topic. 
@@ -41,7 +42,8 @@ class YoutubeAutomationAgents():
                 days since published, channel subscriber count, and video url.
                 """,
             backstory="""As a YouTube Researcher, you are responsible for finding high-performing YouTube videos on the same topic.""",
-            verbose=True
+            verbose=True,
+            tools=[youtube_video_details_tool]
         )
 
     def title_creator(self):
