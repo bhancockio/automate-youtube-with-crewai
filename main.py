@@ -83,5 +83,7 @@ crew = Crew(
 # Kick of the crew
 results = crew.kickoff()
 
+print("Crew usage", crew.usage_metrics)
+
 print("Crew work results:")
 print(results)

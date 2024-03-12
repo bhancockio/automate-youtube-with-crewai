@@ -13,90 +13,94 @@ class YoutubeAutomationTasks():
                 a YouTube video description, and an emails newsletter update about the new video.
                                
                 The video topic is: {video_topic}
-                The video details are: {video_details}
+                The video details are: {video_details}  
 
-            Example Output:
-                                   
-            # YouTube Competition Research Table:
-            - Video 1:
-                - Title: "How to Make a YouTube Video"
-                - View Count: 100,000
-                - Days Since Published: 30
-                - Channel Subscriber Count: 1,000
-                - Video URL: https://www.youtube.com/watch?v=1234
-            - Video 2:
-                - Title: "How to Make a YouTube Video"
-                - View Count: 100,000
-                - Days Since Published: 30
-                - Channel Subscriber Count: 1,000
-                - Video URL: https://www.youtube.com/watch?v=1234
+                 
+                Here is an example report that you can use as a template:
+                - It is important to note that the example report only contains 2 videos, 
+                    but the final report should contain 15 videos.
+                - It is important to note that the example report only contains 3 potential high CTRO titles,
+                     but the final report should contain 10 titles.               
+                
+                Example Report:
+                # YouTube Competition Research Table:
+                - Video 1:
+                    - Title: "How to Make a YouTube Video"
+                    - View Count: 100,000
+                    - Days Since Published: 30
+                    - Channel Subscriber Count: 1,000
+                    - Video URL: https://www.youtube.com/watch?v=1234
+                - Video 2:
+                    - Title: "How to Make a YouTube Video"
+                    - View Count: 100,000
+                    - Days Since Published: 30
+                    - Channel Subscriber Count: 1,000
+                    - Video URL: https://www.youtube.com/watch?v=1234
 
-            [THE REST OF THE YOUTUBE COMPETITION RESEARCH GOES HERE]
-                                   
-            - Video 15:
-                - Title: "How to Make a YouTube Video"
-                - View Count: 100,000
-                - Days Since Published: 30
-                - Channel Subscriber Count: 1,000
-                - Video URL: https://www.youtube.com/watch?v=1234                
-                                   
-            # Potential High CTRO Titles:
-            - How to Make a YouTube Video
-            - How to Make a YouTube Video in 2021
-            - How to Make a YouTube Video for Beginners
-            [THE REST OF THE POTENTIAL HIGH CTRO TITLES GO HERE]
-                                   
-            # YouTube Video Description:
-            🤖 Download the CrewAI Source Code Here:
-            https://brandonhancock.io/crewai-updated-tutorial-hierarchical 
+                ...
+                                    
+                # Potential High CTRO Titles:
+                - How to Make a YouTube Video
+                - How to Make a YouTube Video in 2021
+                - How to Make a YouTube Video for Beginners
+                [THE REST OF THE POTENTIAL HIGH CTRO TITLES GO HERE]
+                                    
+                # YouTube Video Description:
+                🤖 Download the CrewAI Source Code Here:
+                https://brandonhancock.io/crewai-updated-tutorial-hierarchical 
 
-            Don't forget to Like and Subscribe if you're a fan of free source code 😉
+                Don't forget to Like and Subscribe if you're a fan of free source code 😉
 
-            Ready to lead an AI revolution? Watch and learn how to build your own CrewAI from the ground up using the latest CrewAI features, and get set to deploy an army of AI agents at your command. This video is your ultimate guide to creating a powerful digital workforce, enhancing your projects with intelligent automation and streamlined workflows. Discover the secrets to customizing AI agents, setting them on tasks, and managing a smooth operation with CrewAI. It’s time to amplify your tech capabilities, and after this tutorial, you'll be equipped to engineer an AI crew that transforms any complex challenge into a simple task. Start your journey to AI mastery with CrewAI today!
+                Ready to lead an AI revolution? Watch and learn how to build your own CrewAI from the ground up using the latest CrewAI features, and get set to deploy an army of AI agents at your command. This video is your ultimate guide to creating a powerful digital workforce, enhancing your projects with intelligent automation and streamlined workflows. Discover the secrets to customizing AI agents, setting them on tasks, and managing a smooth operation with CrewAI. It’s time to amplify your tech capabilities, and after this tutorial, you'll be equipped to engineer an AI crew that transforms any complex challenge into a simple task. Start your journey to AI mastery with CrewAI today!
 
-            📰 Stay updated with my latest projects and insights:
-            LinkedIn: https://www.linkedin.com/in/brandon-hancock-ai/
-            Twitter: https://twitter.com/bhancock_ai
+                📰 Stay updated with my latest projects and insights:
+                LinkedIn: https://www.linkedin.com/in/brandon-hancock-ai/
+                Twitter: https://twitter.com/bhancock_ai
 
-            Resources:
-            - https://github.com/joaomdmoura/crewAI-examples/
-            - https://www.crewai.io/
-            - https://twitter.com/joaomdmoura/status/1756428892045496608
-            - https://serper.dev/
-            
-            # Email Announcement:
-            
-            Subject: New CrewAI Tutorial: Learn How To Use the Latest CrewAI Features
+                Resources:
+                - https://github.com/joaomdmoura/crewAI-examples/
+                - https://www.crewai.io/
+                - https://twitter.com/joaomdmoura/status/1756428892045496608
+                - https://serper.dev/
+                
+                # Email Announcement:
+                
+                Subject: New CrewAI Tutorial: Learn How To Use the Latest CrewAI Features
 
-            Hey [FIRST NAME GOES HERE]!
+                Hey [FIRST NAME GOES HERE]!
 
-            Exciting update: CrewAI's new version is here, making it quicker and more dependable!
+                Exciting update: CrewAI's new version is here, making it quicker and more dependable!
 
-            You loved our first CrewAI tutorial, so I just published a new one for you.
+                You loved our first CrewAI tutorial, so I just published a new one for you.
 
-            In this tutorial, you'll get up to speed with CrewAI's new features. We'll then apply these updates by building an AI Newsletter, demonstrating how to use what you've learned in a real project.
+                In this tutorial, you'll get up to speed with CrewAI's new features. We'll then apply these updates by building an AI Newsletter, demonstrating how to use what you've learned in a real project.
 
-            [VIDEO PREVIEW HERE]
+                [VIDEO PREVIEW HERE]
 
-            Here's what's in store:
+                Here's what's in store:
 
-            Learn to manage a team with CrewAI's new Hierarchical workflow.
-            Discover how asynchronous tasks can boost your efficiency.
-            Find out how the Expected Output feature ensures accuracy and reliability.
-            Plus, lots more insights!
-            Dive into the tutorial to explore CrewAI's enhanced functions:
+                Learn to manage a team with CrewAI's new Hierarchical workflow.
+                Discover how asynchronous tasks can boost your efficiency.
+                Find out how the Expected Output feature ensures accuracy and reliability.
+                Plus, lots more insights!
+                Dive into the tutorial to explore CrewAI's enhanced functions:
 
-            [VIDEO PREVIEW HERE]
+                [VIDEO PREVIEW HERE]
 
-            Questions or want to share how you're doing? Email me or comment on YouTube.
+                Questions or want to share how you're doing? Email me or comment on YouTube.
 
-            Happy coding!
+                Happy coding!
 
-            Cheers, 
-            Brandon Hancock
+                Cheers, 
+                Brandon Hancock
             """),
             agent=agent,
-            output_file="output/YouTube_Video_Creation_Report"
+            output_file="output/YouTube_Video_Creation_Report.txt",
+            expected_output=dedent(f"""
+                Generate a report that is formatted exactly like the example report provided to you earlier.
+                Make sure the report contains 15 videos, 10 potential high CTRO titles, a YouTube video description, and an email newsletter update about the new video.
+                The researched video should have all the required details and valid URLs.
+            """)
         )
 
     def manage_youtube_video_research(self, agent, video_topic, video_details):
@@ -123,6 +127,8 @@ class YoutubeAutomationTasks():
                 Important Notes: 
                 - Make sure the CSV uses ; as the delimiter
                 - Make sure the final Research CSV Outline doesn't contain duplicate videos
+                - It is SUPER IMPORTANT that you properly match up view counts, subscriber counts, 
+                    and everything else to the video URL.
                 - It is SUPER IMPORTANT that you only populate the research CSV with real YouTube videos 
                     and YouTube URLs that actually link to the YouTube Video.
                 """),
@@ -196,7 +202,7 @@ class YoutubeAutomationTasks():
                 
                 Important Notes:
                 - Make sure to copy my style, tone, and voice when writing the email.
-                -  Before submitting your final work, you MUST have a human review your tenative final email.
+                - Create a draft email. Once you have created a draft email, you MUST have a human review your tenative final email.
 
                 Email 1:
                 ----------------
@@ -269,4 +275,7 @@ class YoutubeAutomationTasks():
                 ----------------
                 """),
             agent=agent,
+            expected_output=dedent(f"""
+                An email that contains a subject and body that is formatted exactly like the example email provided to you earlier.
+            """)
         )

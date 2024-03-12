@@ -64,7 +64,11 @@ class YoutubeAutomationAgents():
             role="Email Creator",
             goal="""Create an email to send to the marketing team to promote the new YouTube video.""",
             backstory="""As an Email Creator, you are responsible for creating an email to send to the marketing team 
-                to promote the new YouTube video.""",
+                to promote the new YouTube video.
+                
+                It is vital that you ONLY ask for human feedback after you've created the email.
+                Do NOT ask the human to create the email for you.
+                """,
             verbose=True,
             tools=human_tools
         )

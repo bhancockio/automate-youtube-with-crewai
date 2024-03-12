@@ -2,15 +2,14 @@
 name = "automate-youtube-with-crewai"
 version = "0.1.0"
 description = "Automate YouTube tasks with CrewAI"
-authors = ["bhancock_ai <brandon@brandonhancock.io>"]
+authors = ["bhancock_ai <brandon@brandonhancock.io>", "João Moura <joaomdmoura@mgail.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.12"
-crewai = "^0.16.0"
-langchain-community = "^0.0.22"
+crewai = {extras = ["tools"], version = "^0.19.0"}
 pydantic = "^2.6.3"
 load-dotenv = "^0.1.0"
-crewai-tools = "^0.0.12"
+crewai-tools = "^0.0.15"
 
 [tool.pyright]
 # https://github.com/microsoft/pyright/blob/main/docs/configuration.md
